@@ -1,13 +1,15 @@
-// المبلغ المجموع لكل صفحة: العامة بالشيكل، وصفحة بو أحمد بالريال (لكلٍّ هدف 7,000)
+// المبلغ المجموع لكل صفحة: العامة بالشيكل، بو أحمد بالريال، أم أحمد بالشيكل (لكلٍّ هدف 7,000)
 // GET  /api/amount            ← الصفحة العامة {goal, raised}
 // GET  /api/amount?p=vip      ← صفحة بو أحمد  {goal, raised}
+// GET  /api/amount?p=um       ← صفحة أم أحمد  {goal, raised}
 // GET  /api/amount?p=all      ← صفحة الإدارة  {public:{...}, vip:{...}}
-// POST /api/amount {pin, public?, vip?}  ← تحديث من صفحة الإدارة
+// POST /api/amount {pin, public?, vip?, um?}  ← تحديث من صفحة الإدارة
 // يحتاج على Vercel: قاعدة Upstash Redis مربوطة بالمشروع + متغير ADMIN_PIN
 
 const PAGES = {
   public: { key: 'fatihoun:raised-ils', goal: 7000 }, // شيكل
   vip:    { key: 'fatihoun:raised-sar', goal: 7000 }, // ريال
+  um:     { key: 'fatihoun:raised-um',  goal: 7000 }, // شيكل
 };
 
 const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
@@ -22,6 +24,12 @@ async function redis(path) {
 async function read(name) {
   const { result } = await redis('/get/' + PAGES[name].key);
   return { goal: PAGES[name].goal, raised: Number(result) || 0 };
+}
+
+async function readAll() {
+  const out = {};
+  for (const name of Object.keys(PAGES)) out[name] = await read(name);
+  return out;
 }
 
 function amount(v) {
@@ -40,8 +48,8 @@ module.exports = async (req, res) => {
     const p = (req.query && req.query.p) || 'public';
 
     if (req.method === 'GET') {
-      if (p === 'all') return res.status(200).json({ public: await read('public'), vip: await read('vip') });
-      return res.status(200).json(await read(p === 'vip' ? 'vip' : 'public'));
+      if (p === 'all') return res.status(200).json(await readAll());
+      return res.status(200).json(await read(PAGES[p] ? p : 'public'));
     }
 
     if (req.method === 'POST') {
@@ -50,13 +58,13 @@ module.exports = async (req, res) => {
         await new Promise(r => setTimeout(r, 800));
         return res.status(401).json({ error: 'wrong-pin' });
       }
-      for (const name of ['public', 'vip']) {
+      for (const name of Object.keys(PAGES)) {
         if (body[name] === undefined || body[name] === '') continue;
         const n = amount(body[name]);
         if (n === null) return res.status(400).json({ error: 'bad-amount', page: name });
         await redis('/set/' + PAGES[name].key + '/' + n);
       }
-      return res.status(200).json({ public: await read('public'), vip: await read('vip') });
+      return res.status(200).json(await readAll());
     }
 
     res.setHeader('Allow', 'GET, POST');
