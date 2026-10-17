@@ -430,14 +430,13 @@ footer .nm{font-family:var(--brand);font-size:1.15rem;color:var(--green)}
 <script>
 /* ===== settings: update these as donations are confirmed ===== */
 var CAMPAIGN = {
-  goal: 5800,                              // تقريبي حتى يُقرأ السعر
+  goal: 7000,                              // شيكل
   raised: 0,                               // القيمة الاحتياطية فقط · المبلغ الفعلي في data.json
   whatsapp: "970595891086",                // رقم واتساب اللجنة: +970 59-589-1086
   eventTime: "2026-10-22T18:30:00+03:00",  // الخميس بعد العشاء (تقريبي)
   link: location.origin + location.pathname
 };
 
-var CURRENCY = "ILS";  // الصفحة العامة بالشيكل، صفحة بو أحمد بالريال
 var DATA_URLS = ["/api/amount", "data.json"];  // المبلغ من صفحة الإدارة، وإلا من data.json
 function start(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -573,12 +572,9 @@ var SPLASH_SEEN = false;
   var done = false;
   function go(){ if (!done){ done = true; start(); } }
   setTimeout(go, 1500);
-  function get(u){ return fetch(u + '?t=' + Date.now(), {cache:'no-store'}).then(function(r){ if (!r.ok) throw 0; return r.json(); }).then(function(d){ if (typeof d.raised !== 'number' && typeof d.raisedSar !== 'number') throw 0; return d; }); }
+  function get(u){ return fetch(u + (u.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now(), {cache:'no-store'}).then(function(r){ if (!r.ok) throw 0; return r.json(); }).then(function(d){ if (typeof d.raised !== 'number') throw 0; return d; }); }
   get(DATA_URLS[0]).catch(function(){ return get(DATA_URLS[1]); })
-    .then(function(d){ if (done) return;
-      var gs = d.goalSar != null ? d.goalSar : d.goal, rs = d.raisedSar != null ? d.raisedSar : d.raised;
-      if (CURRENCY === 'ILS'){ var r = d.rate || 0.83; CAMPAIGN.goal = Math.round(gs * r / 10) * 10; CAMPAIGN.raised = Math.round(rs * r); }
-      else { CAMPAIGN.goal = gs; CAMPAIGN.raised = rs; } })
+    .then(function(d){ if (!done){ CAMPAIGN.raised = d.raised; if (typeof d.goal === 'number') CAMPAIGN.goal = d.goal; } })
     .catch(function(){})
     .then(go);
 })();
