@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="دعوة خاصة إلى الأخ الفاضل بو أحمد">
+<meta property="og:description" content="حفل «الفاتحون حملة القرآن» · مركز محمد الفاتح لتحفيظ القرآن الكريم">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>دعوة بو أحمد</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Reem+Kufi:wght@500;600;700&display=swap">
+<style>
+/* Layout: intro splash, then a hero: big title beside a rounded green block that IS the campaign card. Sections follow the Umrah-poster language: green pill titles under a gold diamond, numbered gold diamonds in one divided frosted box. Single light brand look by choice. */
+:root{
+  color-scheme:light;
+  --green:#133F2F;
+  --green-2:#1d5a44;
+  --green-3:#2a7356;
+  --mint:#7CC3A8;
+  --mint-soft:#CFEADF;
+  --gold:#C8A04B;
+  --gold-soft:#ead49b;
+  --bg:#F7FAF8;
+  --ink:#10251c;
+  --muted:#5a7068;
+  --hair:rgba(19,63,47,.12);
+  --glass:rgba(255,255,255,.6);
+  --glass-line:rgba(255,255,255,.92);
+  --shadow:0 18px 44px -20px rgba(19,63,47,.32);
+  --head:"Noto Kufi Arabic","Segoe UI",Tahoma,sans-serif;
+  --brand:"Reem Kufi","Noto Kufi Arabic",Tahoma,sans-serif;
+  --verse:"Amiri","Traditional Arabic",serif;
+}
+*{box-sizing:border-box}
+html{direction:rtl;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--head);font-size:.98rem;line-height:1.85;direction:rtl;overflow-x:hidden}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;line-height:1.45;text-wrap:balance}
+p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px}
+.wrap{max-width:1140px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* soft light behind everything */
+.field{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(40% 28% at 92% 6%, rgba(124,195,168,.42), transparent 70%),
+  radial-gradient(36% 26% at 4% 40%, rgba(234,212,155,.5), transparent 70%),
+  radial-gradient(44% 30% at 96% 78%, rgba(207,234,223,.85), transparent 70%),
+  var(--bg)}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border:1px solid var(--glass-line);box-shadow:var(--shadow)}
+
+/* ================= SPLASH ================= */
+.splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(55% 45% at 50% 46%, #23634b 0%, #133F2F 55%, #0c2a20 100%);color:#fff;cursor:pointer;
+  animation:splashOut .7s cubic-bezier(.7,0,.3,1) 4.3s forwards}
+.splash::before{content:"";position:absolute;width:min(70vw,520px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, rgba(200,160,75,.28), transparent 65%);animation:glow 2.6s ease-out both}
+.splash-in{position:relative;display:grid;place-items:center}
+.slogo{width:min(48vw,190px);height:auto;overflow:visible}
+.slogo .d{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .8s cubic-bezier(.6,0,.2,1) forwards}
+.slogo .d2{animation-delay:.2s}
+.slogo .d3{animation-delay:.5s}
+.slogo .d4{animation-delay:1s;animation-duration:.6s}
+.slogo .d5{animation-delay:1.9s;animation-duration:.5s}
+.slogo .f{opacity:0;animation:fade .4s ease forwards}
+.slogo .f1{animation-delay:1s}
+.slogo .t1{transform-box:fill-box;transform-origin:center;animation:rise .6s cubic-bezier(.2,.7,.2,1) 1.3s forwards;transform:translateY(8px) scale(.96)}
+.slogo .t2{transform-box:fill-box;transform-origin:center;animation:rise .55s ease 1.7s forwards;transform:translateY(8px)}
+.slogo .t3{animation-delay:2.1s}
+.splash .skip{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font-size:.75rem;opacity:.45}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes reveal{to{clip-path:inset(0 0 0 0)}}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes grow{to{width:120px}}
+@keyframes glow{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes splashOut{to{transform:translateY(-100%);visibility:hidden}}
+.splash.go{animation:splashOut .6s cubic-bezier(.7,0,.3,1) forwards}
+@media (prefers-reduced-motion:reduce){
+  .splash{animation:splashOut .01s linear 1.2s forwards}
+  .splash *,.splash::before{animation:none!important;opacity:1!important;stroke-dashoffset:0!important;transform:none!important}
+}
+
+
+/* ================= HERO ================= */
+.hero{position:relative;isolation:isolate;min-height:min(88svh,760px);display:grid;align-items:end;border-radius:0 0 34px 34px;overflow:hidden;background:var(--green)}
+.cover{position:absolute;z-index:0;inset:0}
+.cover img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,42,32,.25) 0%,rgba(19,63,47,.45) 35%,rgba(19,63,47,.88) 64%,rgba(15,52,39,.97) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-block:6rem 2.2rem}
+.hero-text{display:grid;gap:.75rem;max-width:620px}
+.org-bar{position:absolute;z-index:2;top:calc(16px + env(safe-area-inset-top,0px));left:0;right:0;display:flex}
+.org{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-radius:999px;padding:.3rem .95rem}
+.org svg{width:14px;height:14px;color:var(--gold)}
+.hero h1{font-weight:900;font-size:clamp(2rem,9.6vw,3.6rem);line-height:1.4;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero h1 .l2{display:block}
+.hero h1 .l2 em{font-style:normal;color:var(--gold-soft)}
+.hero .sub{color:rgba(255,255,255,.86);font-size:.95rem;max-width:40ch}
+.inv{display:grid;justify-items:center;gap:.15rem;margin-top:1.1rem;text-align:center}
+.inv-k{font-size:.85rem;font-weight:600;color:var(--mint-soft);opacity:0;transform:translateY(6px);animation:rise .5s ease 2.5s forwards}
+.inv-n{font-family:var(--verse);font-weight:700;font-size:clamp(1.7rem,7.4vw,2.2rem);color:var(--gold-soft);opacity:0;transform:translateY(6px);animation:rise .6s ease 2.8s forwards}
+.vip{display:grid;gap:.05rem;border-inline-start:2px solid var(--gold);padding-inline-start:.9rem;margin-bottom:.2rem}
+.vip-k{font-size:.78rem;font-weight:700;color:var(--gold-soft);letter-spacing:.03em}
+.vip-n{font-family:var(--verse);font-weight:700;font-size:clamp(1.4rem,5.8vw,1.85rem);color:#fff;line-height:1.5}
+.vip-note{font-size:.85rem;color:rgba(255,255,255,.85);text-align:center;line-height:1.8;padding-top:.3rem;border-top:1px solid rgba(255,255,255,.14)}
+.meet{display:grid;gap:.35rem;justify-items:center}
+.dua{font-size:clamp(1.25rem,5.2vw,1.6rem)!important;max-width:30ch}
+.meet .k{font-size:.78rem;font-weight:700;color:var(--gold-soft)}
+.meet b{font-size:1.05rem;font-weight:700}
+.meet span{font-size:.9rem;opacity:.85}
+.hp{display:grid;gap:.45rem;max-width:420px;margin-top:.3rem}
+.hp-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.85rem;color:rgba(255,255,255,.8)}
+.hp-row b{color:var(--gold-soft);font-size:1.2rem;font-weight:800;font-variant-numeric:tabular-nums}
+.bar.thin{height:5px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.5rem}
+
+.compo{position:relative;max-width:520px;margin-inline:auto}
+.block{grid-column:1;grid-row:1;position:relative;overflow:hidden;isolation:isolate;border-radius:34px;padding:1.5rem 1.3rem 1.3rem;color:#fff;
+  background:linear-gradient(155deg,#2a7356 0%,#1d5a44 40%,#133F2F 100%);box-shadow:0 24px 50px -22px rgba(19,63,47,.7);display:grid;gap:1rem}
+.block::after,.ach-main::after{content:"";position:absolute;z-index:-1;width:300px;height:300px;left:-110px;top:-110px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.1'%3E%3Crect x='20' y='20' width='60' height='60'/%3E%3Crect x='20' y='20' width='60' height='60' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='24'/%3E%3Ccircle cx='50' cy='50' r='21' stroke-dasharray='.6 2.4'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain;opacity:.1;pointer-events:none}
+.ach-main::after{left:auto;top:auto;right:-90px;bottom:-120px;width:260px;height:260px}
+.spread .block::after{left:auto;top:auto;right:-110px;bottom:-120px}
+.lbl{font-size:.82rem;color:rgba(255,255,255,.75)}
+.amount{display:flex;align-items:baseline;flex-wrap:wrap;gap:.1rem .5rem}
+.amount strong{font-size:clamp(2.4rem,11vw,3.2rem);font-weight:900;line-height:1.1;color:var(--gold-soft);font-variant-numeric:tabular-nums}
+.amount span{font-size:.92rem;color:rgba(255,255,255,.8)}
+.bar{height:10px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden}
+.bar i{display:block;height:100%;width:var(--p,0%);background:linear-gradient(270deg,var(--gold-soft),var(--gold));border-radius:999px;transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
+.meta{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:rgba(255,255,255,.8)}
+.meta b{color:#fff}
+.cdl{font-size:.78rem;color:rgba(255,255,255,.7);margin-bottom:-.5rem}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:.45rem}
+.cd div{border-radius:14px;padding:.35rem 0 .25rem;display:grid;text-align:center;line-height:1.35;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.cd b{font-size:1.25rem;font-weight:700;font-variant-numeric:tabular-nums}
+.cd span{font-size:.68rem;opacity:.75}
+.block-actions{display:grid;grid-template-columns:1fr auto;gap:.55rem;margin-top:.2rem}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--head);font-weight:700;font-size:1rem;padding:.8rem 1.4rem;border-radius:999px;border:0;cursor:pointer;text-decoration:none;transition:transform .12s ease,filter .12s ease}
+.btn:hover{filter:brightness(1.05)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-gold{background:linear-gradient(180deg,#dcb96c,var(--gold));color:var(--green);box-shadow:0 10px 22px -10px rgba(200,160,75,.9)}
+.btn-glass{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 10px 22px -10px rgba(19,63,47,.65)}
+.btn-wa{background:#1fa855;color:#fff;box-shadow:0 10px 22px -10px rgba(31,168,85,.7)}
+
+/* ================= SECTION TITLES (Umrah poster) ================= */
+section{padding-block:2.6rem}
+.title{display:grid;justify-items:center;gap:.55rem;margin-bottom:1.6rem;text-align:center}
+.title .dia{width:13px;height:13px;background:var(--gold);transform:rotate(45deg);border-radius:2px}
+.title h2{background:var(--green);color:#fff;font-weight:800;font-size:clamp(1.25rem,5.2vw,1.6rem);padding:.4rem 2.1rem .5rem;border-radius:999px;box-shadow:0 12px 24px -14px rgba(19,63,47,.7)}
+.orn{display:flex;align-items:center;gap:.5rem;color:var(--gold)}
+.orn i{width:7px;height:7px;border:1.4px solid currentColor;transform:rotate(45deg)}
+.orn b{width:44px;height:1.4px;background:currentColor}
+.orn svg{width:14px;height:14px}
+.title .verse{font-family:var(--verse);font-size:clamp(1.35rem,5.6vw,1.75rem);color:var(--green);line-height:1.7;quotes:"﴿" "﴾"}
+.title .verse + small{font-size:.75rem;color:var(--muted);margin-top:-.5rem}
+
+/* numbered steps box */
+.steps{border-radius:28px;display:grid;grid-template-columns:1fr 1fr;padding:.4rem}
+.step{display:grid;justify-items:center;text-align:center;gap:.45rem;padding:1.2rem .8rem 1.1rem;position:relative}
+.step:nth-child(odd)::after{content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;background:var(--hair)}
+.step:nth-child(-n+2){border-bottom:1px solid var(--hair)}
+.num{width:34px;height:34px;display:grid;place-items:center;position:relative;color:var(--green);font-weight:800;font-size:.95rem}
+.num::before{content:"";position:absolute;inset:4px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));transform:rotate(45deg);border-radius:4px;z-index:-1}
+.num{isolation:isolate}
+.step b{color:var(--green);font-weight:700;font-size:1rem;line-height:1.55}
+.step span{color:var(--muted);font-size:.82rem;line-height:1.7;max-width:22ch}
+
+/* achievements */
+.ach{display:grid;gap:.8rem}
+.ach-main{position:relative;overflow:hidden;isolation:isolate;border-radius:30px;padding:1.4rem 1.5rem;color:#fff;background:linear-gradient(155deg,#2a7356,#133F2F 75%);display:flex;align-items:center;gap:1.2rem;box-shadow:0 20px 40px -22px rgba(19,63,47,.7)}
+.ach-main b{font-size:clamp(3.6rem,17vw,5rem);font-weight:900;line-height:1;color:var(--gold-soft);font-variant-numeric:tabular-nums}
+.ach-main span{font-size:1.05rem;font-weight:700;line-height:1.6}
+.ach-main small{display:block;font-size:.8rem;font-weight:500;opacity:.75}
+.ach-grid{border-radius:28px;display:grid;grid-template-columns:1fr 1fr;padding:.4rem}
+.ach-grid .step b.n{font-size:1.9rem;font-weight:900;color:var(--green);line-height:1.15;font-variant-numeric:tabular-nums}
+
+.photos-head{display:flex;justify-content:space-between;align-items:baseline;margin:1.8rem 0 .7rem}
+.photos-head h3{font-size:1rem;font-weight:800;color:var(--green)}
+.photos-head span{font-size:.75rem;color:var(--muted)}
+.strip{display:flex;gap:.7rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1 * max(16px,env(safe-area-inset-right,0px))) calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-left,0px));padding-bottom:.6rem}
+.strip::-webkit-scrollbar{display:none}
+.strip button{all:unset;flex:0 0 auto;width:156px;aspect-ratio:3/4;border-radius:22px;overflow:hidden;scroll-snap-align:start;cursor:zoom-in;background:var(--mint-soft);box-shadow:0 10px 22px -14px rgba(19,63,47,.5)}
+.strip button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.strip button:hover img{transform:scale(1.04)}
+
+/* spread */
+.spread{position:relative}
+.spread .block{text-align:center;justify-items:center;gap:.8rem;padding:1.8rem 1.3rem}
+.spread q{font-family:var(--verse);font-size:clamp(1.45rem,6vw,1.9rem);line-height:1.7;color:var(--gold-soft);quotes:"«" "»"}
+.spread small{font-size:.75rem;opacity:.7}
+.spread p{font-size:.9rem;opacity:.88;max-width:36ch}
+.spread .row{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem}
+
+footer{text-align:center;padding-block:1rem 7rem;color:var(--muted);font-size:.8rem}
+footer .wrap{display:grid;gap:.35rem;justify-items:center}
+footer .nm{font-family:var(--brand);font-size:1.15rem;color:var(--green)}
+.demo{font-size:.7rem;font-weight:600;color:#8a5a12;background:#fbefd4;border-radius:999px;padding:.05rem .6rem}
+
+/* floating donate */
+.fab{position:fixed;z-index:35;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));translate:-50% 0;display:flex;align-items:center;gap:.8rem;padding:.4rem .4rem .4rem 1rem;border-radius:999px;transition:opacity .25s ease,transform .25s ease;white-space:nowrap}
+.fab.off{opacity:0;transform:translateY(20px);pointer-events:none}
+.fab .mini{font-size:.78rem;color:var(--muted)}
+.fab .mini b{color:var(--green)}
+.fab .btn{padding:.6rem 1.2rem;font-size:.92rem}
+
+/* bottom sheet */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(10,30,22,.35);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.sheet{position:fixed;z-index:51;left:0;right:0;bottom:0;margin-inline:auto;max-width:520px;border-radius:28px 28px 0 0;padding:.6rem max(18px,env(safe-area-inset-right,0px)) calc(1.2rem + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border:1px solid var(--glass-line);box-shadow:0 -20px 50px -20px rgba(19,63,47,.4);display:grid;grid-template-columns:minmax(0,1fr);gap:.9rem;animation:up .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.grab{justify-self:center;width:42px;height:5px;border-radius:5px;background:rgba(19,63,47,.2)}
+.sheet-head{display:flex;justify-content:space-between;align-items:center}
+.sheet-head h2{font-size:1.15rem;font-weight:800;color:var(--green)}
+.x{width:34px;height:34px;border-radius:50%;border:0;background:rgba(19,63,47,.07);cursor:pointer;display:grid;place-items:center}
+.amts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.amt{border:1.5px solid var(--hair);background:#fff;border-radius:16px;padding:.7rem;cursor:pointer;font-weight:700;font-size:1.05rem;color:var(--green);font-variant-numeric:tabular-nums;transition:background .15s ease,border-color .15s ease}
+.amt small{font-size:.7em;font-weight:500;color:var(--muted)}
+.amt.full{grid-column:1/-1;font-size:.95rem}
+.amt[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.amt[aria-pressed="true"] small{color:var(--gold-soft)}
+.other{display:flex;align-items:center;gap:.5rem;border:1.5px solid var(--hair);background:#fff;border-radius:16px;padding:.3rem .5rem .3rem .9rem}
+.other:focus-within{border-color:var(--gold)}
+.other label{font-size:.85rem;color:var(--muted);white-space:nowrap}
+.other input{flex:1;width:0;min-width:0;border:0;background:transparent;font:inherit;font-weight:700;font-size:1.05rem;color:var(--green);text-align:left;direction:ltr;outline:none;padding:.4rem 0}
+.other span{font-size:.85rem;color:var(--muted)}
+.impact{font-size:.85rem;color:var(--muted);text-align:center;min-height:1.6em}
+.impact b{color:var(--green)}
+.sheet .note{font-size:.75rem;color:var(--muted);text-align:center;line-height:1.7}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(8,20,15,.94);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:82vh;border-radius:14px;object-fit:contain}
+.lb button{position:absolute;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-size:1.3rem;cursor:pointer;display:grid;place-items:center}
+.lb .c{top:calc(14px + env(safe-area-inset-top,0px));left:calc(14px + env(safe-area-inset-left,0px))}
+.lb .p{right:calc(12px + env(safe-area-inset-right,0px));top:50%;translate:0 -50%}
+.lb .n{left:calc(12px + env(safe-area-inset-left,0px));top:50%;translate:0 -50%}
+.toast{position:fixed;z-index:70;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));translate:-50% 0;background:var(--green);color:#fff;font-size:.85rem;padding:.5rem 1rem;border-radius:999px;box-shadow:var(--shadow)}
+
+/* ================= WIDER ================= */
+@media (min-width:760px){
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .steps .step:nth-child(-n+2){border-bottom:0}
+  .steps .step:not(:last-child)::after{content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;background:var(--hair)}
+  .ach{grid-template-columns:300px 1fr;align-items:stretch}
+  .ach-main{flex-direction:column;justify-content:center;text-align:center}
+  .ach-grid{grid-template-columns:1fr 1fr}
+  .strip button{width:190px}
+  .sheet{bottom:50%;transform:translateY(50%);border-radius:28px;animation:none}
+  .grab{display:none}
+}
+@media (min-width:1000px){
+  .hero{min-height:640px;border-radius:0 0 44px 44px}
+  .hero .wrap{padding-block:8rem 3.5rem}
+  .block{padding:2rem 1.8rem 1.7rem}
+    section{padding-block:3.6rem}
+  .spread{max-width:780px;margin-inline:auto}
+  .fab{display:none}
+  footer{padding-bottom:2.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .bar i,.fab,.sheet,.strip img{transition:none;animation:none}
+}
+</style>
+
+<div class="field" aria-hidden="true"></div>
+
+<div class="splash" id="splash" role="presentation">
+  <div class="splash-in">
+    <svg class="slogo" viewBox="0 0 345 457.5" aria-hidden="true"><g>
+
+<path class="d d1" pathLength="1" stroke-width="8.25" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke="#f4f8f6" d="M60 60H285V285H60Z"/>
+<path class="d d2" pathLength="1" transform="matrix(1,1,-1,1,0,0)" stroke-width="5.833631" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke="#f4f8f6" d="M92.951-79.549H252.049V79.549H92.951ZM92.951-79.549"/>
+<path d="M264 172.5C264 223.035 223.035 264 172.5 264 121.965 264 81 223.035 81 172.5 81 121.965 121.965 81 172.5 81 223.035 81 264 121.965 264 172.5ZM264 172.5" fill="none"/>
+<path class="d d3" pathLength="1" stroke-width="2.25" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#d9b45a" d="M264 172.5C264 223.035 223.035 264 172.5 264 121.965 264 81 223.035 81 172.5 81 121.965 121.965 81 172.5 81 223.035 81 264 121.965 264 172.5ZM264 172.5"/>
+<path class="f f1" stroke-width=".9" stroke-linecap="butt" stroke-dasharray="1.5,5.25" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#d9b45a" d="M255 172.5C255 218.062 218.062 255 172.5 255 126.938 255 90 218.062 90 172.5 90 126.938 126.938 90 172.5 90 218.062 90 255 126.938 255 172.5ZM255 172.5"/>
+<path class="d d4" pathLength="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke="#9fd6c0" d="M172.5 136.5C159 127.5 144 126 129 129V150C144 147 159 148.5 172.5 157.5ZM172.5 136.5"/>
+<path class="d d4" pathLength="1" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke="#9fd6c0" d="M172.5 136.5C186 127.5 201 126 216 129V150C201 147 186 148.5 172.5 157.5ZM172.5 136.5"/>
+<path class="f f1" d="M172.5 109.445 177.805 114.75 172.5 120.055 167.195 114.75ZM172.5 109.445" fill="#d9b45a"/>
+<path class="f f1" d="M177 13.5C177 19.5 168 19.5 168 13.5 168 7.5 177 7.5 177 13.5ZM177 13.5" fill="#d9b45a"/>
+<path class="f f1" d="M177 331.5C177 337.5 168 337.5 168 331.5 168 325.5 177 325.5 177 331.5ZM177 331.5" fill="#d9b45a"/>
+<path class="f f1" d="M18 172.5C18 178.5 9 178.5 9 172.5 9 166.5 18 166.5 18 172.5ZM18 172.5" fill="#d9b45a"/>
+<path class="f f1" d="M336 172.5C336 178.5 327 178.5 327 172.5 327 166.5 336 166.5 336 172.5ZM336 172.5" fill="#d9b45a"/>
+<path class="f t1" d="M115.699 193.07C114.906 193.07 114.23 192.789 113.668 192.23 113.109 191.668 112.828 190.992 112.828 190.199 112.828 189.406 113.109 188.73 113.668 188.172 114.23 187.609 114.906 187.328 115.699 187.328 116.492 187.328 117.168 187.609 117.727 188.172 118.289 188.73 118.57 189.406 118.57 190.199 118.57 190.992 118.289 191.668 117.727 192.23 117.168 192.789 116.492 193.07 115.699 193.07ZM115.352 220.098C114.133 220.098 112.934 219.891 111.762 219.48 110.594 219.066 109.535 218.441 108.594 217.598 107.656 216.758 106.914 215.711 106.367 214.453 105.824 213.199 105.551 211.715 105.551 210 105.551 208.547 105.855 207.16 106.469 205.844 107.078 204.523 107.859 203.344 108.816 202.305 109.773 201.262 110.766 200.414 111.789 199.754 111.855 200.379 111.805 201 111.641 201.609 111.477 202.219 111.195 202.789 110.797 203.316 111.16 203.484 111.465 203.812 111.715 204.309 111.961 204.801 112.133 205.312 112.234 205.844 112.332 206.371 112.332 206.801 112.234 207.129 111.902 206.863 111.574 206.668 111.242 206.535 110.914 206.402 110.582 206.336 110.254 206.336 109.527 206.336 108.902 206.691 108.371 207.402 107.844 208.109 107.582 208.977 107.582 210 107.582 211.453 107.859 212.664 108.422 213.637 108.984 214.613 109.711 215.328 110.602 215.793 111.492 216.254 112.434 216.484 113.422 216.484 114.477 216.484 115.484 216.23 116.441 215.719 117.398 215.207 118.184 214.445 118.793 213.441 119.402 212.434 119.707 211.188 119.707 209.703 119.707 208.977 119.602 208.258 119.387 207.551 119.172 206.84 118.906 206.156 118.594 205.496 118.281 204.836 117.961 204.258 117.629 203.762L120.996 197.031C122.25 198.551 123.371 200.324 124.359 202.352 125.352 204.383 125.848 206.848 125.848 209.754 125.848 211.996 125.336 213.895 124.312 215.445 123.289 216.996 121.977 218.16 120.375 218.934 118.777 219.711 117.102 220.098 115.352 220.098ZM136.637 210 138.121 203.07H147.875V210ZM130.055 216.535C131.934 217.027 133.43 217.168 134.535 216.953 135.641 216.742 136.457 216.336 136.984 215.742 137.512 215.148 137.852 214.547 138 213.934 138.148 213.324 138.223 212.871 138.223 212.574V203.664L145.152 201.586V211.09C145.152 213.035 144.738 214.629 143.914 215.867 143.09 217.102 142.039 218.012 140.77 218.59 139.5 219.164 138.164 219.453 136.762 219.453 135.359 219.453 134.055 219.199 132.852 218.688 131.645 218.176 130.715 217.457 130.055 216.535ZM145.152 201.586 136.785 193.172C137.215 193.172 137.824 193.145 138.617 193.098 139.41 193.047 140.242 192.93 141.117 192.75 141.992 192.566 142.801 192.289 143.543 191.906 144.285 191.527 144.82 191.023 145.152 190.398ZM136.785 210C135.27 210 133.867 209.621 132.578 208.863 131.293 208.102 130.262 207.078 129.484 205.793 128.711 204.504 128.32 203.102 128.32 201.586 128.32 200.035 128.711 198.625 129.484 197.352 130.262 196.082 131.293 195.066 132.578 194.309 133.867 193.551 135.285 193.172 136.836 193.172 138.352 193.172 139.738 193.551 140.992 194.309 142.246 195.066 143.254 196.082 144.012 197.352 144.773 198.625 145.152 200.035 145.152 201.586 145.152 203.137 144.773 204.547 144.012 205.816 143.254 207.086 142.246 208.102 140.992 208.863 139.738 209.621 138.336 210 136.785 210ZM136.785 203.07C137.215 203.07 137.562 202.93 137.824 202.648 138.09 202.367 138.223 202.016 138.223 201.586 138.223 201.156 138.09 200.801 137.824 200.52 137.562 200.242 137.215 200.102 136.785 200.102 136.355 200.102 135.992 200.242 135.695 200.52 135.398 200.801 135.25 201.156 135.25 201.586 135.25 202.016 135.398 202.367 135.695 202.648 135.992 202.93 136.355 203.07 136.785 203.07ZM145.895 210V203.07H153.219C152.789 202.641 152.371 202.121 151.957 201.512 151.547 200.898 151.109 200.199 150.645 199.406L153.914 193.07C155.133 194.918 156.488 196.602 157.973 198.121 159.457 199.637 160.91 200.844 162.328 201.734 163.746 202.625 164.969 203.07 165.992 203.07H179.555L176.582 210ZM169.852 183.27C169.059 183.27 168.383 182.988 167.82 182.43 167.262 181.867 166.98 181.191 166.98 180.398 166.98 179.605 167.262 178.93 167.82 178.371 168.383 177.809 169.059 177.527 169.852 177.527 170.645 177.527 171.32 177.809 171.883 178.371 172.441 178.93 172.723 179.605 172.723 180.398 172.723 181.191 172.441 181.867 171.883 182.43 171.32 182.988 170.645 183.27 169.852 183.27ZM161.289 183.27C160.496 183.27 159.82 182.988 159.258 182.43 158.699 181.867 158.418 181.191 158.418 180.398 158.418 179.605 158.699 178.93 159.258 178.371 159.82 177.809 160.496 177.527 161.289 177.527 162.082 177.527 162.758 177.809 163.316 178.371 163.879 178.93 164.16 179.605 164.16 180.398 164.16 181.191 163.879 181.867 163.316 182.43 162.758 182.988 162.082 183.27 161.289 183.27ZM159.258 201.832C160.512 201.668 161.371 201.273 161.832 200.645 162.293 200.016 162.559 199.234 162.625 198.293 162.691 197.352 162.723 196.305 162.723 195.148V189.754L169.652 188.219V195.148C169.652 196.965 169.391 198.383 168.863 199.406 168.332 200.43 167.648 201.164 166.809 201.609 165.965 202.055 165.066 202.305 164.109 202.352 163.152 202.402 162.246 202.359 161.387 202.227 160.527 202.098 159.82 201.965 159.258 201.832ZM184.008 210C184.008 210 183.844 209.992 183.516 209.977 183.184 209.957 182.855 209.867 182.523 209.703 182.195 209.539 182.027 209.258 182.027 208.863V171.934L188.957 170.398V203.07H192.918V210ZM203.312 183.172C202.523 183.172 201.844 182.891 201.285 182.328 200.723 181.77 200.441 181.094 200.441 180.301 200.441 179.508 200.723 178.832 201.285 178.27 201.844 177.711 202.523 177.43 203.312 177.43 204.105 177.43 204.781 177.711 205.344 178.27 205.902 178.832 206.184 179.508 206.184 180.301 206.184 181.094 205.902 181.77 205.344 182.328 204.781 182.891 204.105 183.172 203.312 183.172ZM208.758 210V203.07H217.668V210ZM190.938 210V203.07H204.797V196.734L211.73 193.172V208.863C211.73 209.258 211.562 209.539 211.234 209.703 210.902 209.867 210.574 209.957 210.242 209.977 209.914 209.992 209.75 210 209.75 210ZM203.363 201.586C201.844 201.586 200.441 201.207 199.156 200.445 197.867 199.688 196.836 198.664 196.062 197.379 195.285 196.09 194.898 194.688 194.898 193.172 194.898 191.617 195.285 190.207 196.062 188.938 196.836 187.668 197.867 186.652 199.156 185.895 200.441 185.133 201.863 184.754 203.414 184.754 204.93 184.754 206.316 185.133 207.57 185.895 208.824 186.652 209.832 187.668 210.59 188.938 211.348 190.207 211.73 191.617 211.73 193.172 211.73 194.723 211.348 196.133 210.59 197.402 209.832 198.672 208.824 199.688 207.57 200.445 206.316 201.207 204.914 201.586 203.363 201.586ZM203.363 194.656C203.793 194.656 204.141 194.516 204.402 194.234 204.668 193.953 204.797 193.598 204.797 193.172 204.797 192.742 204.668 192.387 204.402 192.105 204.141 191.824 203.793 191.684 203.363 191.684 202.934 191.684 202.57 191.824 202.273 192.105 201.977 192.387 201.828 192.742 201.828 193.172 201.828 193.598 201.977 193.953 202.273 194.234 202.57 194.516 202.934 194.656 203.363 194.656ZM215.688 210V203.07H219.648V171.934L226.578 170.398V208.863C226.578 209.258 226.414 209.539 226.082 209.703 225.754 209.867 225.422 209.957 225.094 209.977 224.766 209.992 224.598 210 224.598 210ZM240.688 207.129C240.488 207.855 239.969 208.492 239.129 209.035 238.285 209.578 237.297 209.949 236.156 210.148 235.02 210.348 233.914 210.32 232.84 210.074 231.77 209.828 230.867 209.297 230.145 208.492 229.418 207.684 229.055 206.535 229.055 205.051V171.934L235.984 170.398V205.051C235.984 205.875 236.164 206.477 236.527 206.855 236.891 207.234 237.336 207.469 237.863 207.551 238.395 207.633 238.922 207.617 239.449 207.5 239.977 207.383 240.391 207.262 240.688 207.129ZM240.688 207.129" fill="#f4f8f6"/>
+<path class="f t2" d="M72.324 384.465C71.484 384.465 70.824 384.203 70.34 383.676 69.852 383.148 69.609 382.441 69.609 381.551 69.609 380.633 69.848 379.918 70.32 379.402 70.789 378.891 71.461 378.633 72.324 378.633 73.16 378.633 73.816 378.891 74.289 379.402 74.762 379.918 74.996 380.633 74.996 381.551 74.996 382.441 74.754 383.148 74.266 383.676 73.781 384.203 73.133 384.465 72.324 384.465ZM71.918 414.719C70.785 414.719 69.73 414.598 68.758 414.355 67.789 414.113 66.883 413.762 66.047 413.301 64.398 412.359 63.129 411.02 62.238 409.293 61.348 407.566 60.902 405.594 60.902 403.379 60.902 401.84 61.086 400.281 61.449 398.703 61.812 397.121 62.32 395.699 62.969 394.43H68.312C67.883 395.859 67.543 397.371 67.301 398.965 67.059 400.559 66.938 402.043 66.938 403.422 66.938 405.391 67.43 406.957 68.414 408.117 69.402 409.281 70.703 409.859 72.324 409.859H73.539C75.617 409.859 77.148 409.301 78.137 408.18 79.121 407.059 79.613 405.473 79.613 403.422V384.953H85.648V403.582C85.648 407.281 84.656 410.062 82.672 411.926 80.688 413.789 77.695 414.719 73.699 414.719ZM89.578 373.613C89.738 371.91 90.191 370.617 90.934 369.723 91.676 368.832 92.613 368.387 93.746 368.387 94.289 368.387 94.848 368.516 95.43 368.773 96.008 369.027 96.555 369.305 97.07 369.602 97.527 369.871 97.98 370.109 98.426 370.312 98.871 370.516 99.27 370.617 99.621 370.617 100.215 370.617 100.66 370.441 100.957 370.09 101.254 369.738 101.512 369.156 101.727 368.348H103.793C103.656 369.969 103.227 371.242 102.496 372.176 101.766 373.105 100.809 373.57 99.621 373.57 99.082 373.57 98.539 373.445 98 373.188 97.461 372.93 96.922 372.652 96.379 372.355 95.922 372.086 95.469 371.852 95.023 371.648 94.578 371.445 94.152 371.344 93.746 371.344 93.152 371.344 92.703 371.52 92.391 371.871 92.082 372.223 91.832 372.801 91.641 373.613ZM93.141 376.648H99.176V405H93.141ZM117.52 405V405.648C117.52 407.484 117.172 409.082 116.469 410.445 115.766 411.812 114.789 412.863 113.531 413.605 112.277 414.348 110.785 414.719 109.059 414.719 107.68 414.719 106.41 414.559 105.25 414.234 104.09 413.91 102.875 413.316 101.605 412.453L104.035 408.523C104.738 408.984 105.363 409.293 105.918 409.453 106.473 409.617 107.125 409.699 107.883 409.699 108.961 409.699 109.832 409.285 110.496 408.461 111.156 407.641 111.488 406.605 111.488 405.363V384.953H117.52V400.141H122.785C122.922 400.141 122.988 400.195 122.988 400.301V404.797C122.988 404.934 122.922 405 122.785 405ZM131.414 380.578C130.574 380.578 129.914 380.316 129.43 379.789 128.941 379.262 128.699 378.555 128.699 377.664 128.699 376.746 128.941 376.027 129.43 375.516 129.914 375.004 130.574 374.746 131.414 374.746 132.25 374.746 132.906 375.004 133.379 375.516 133.848 376.027 134.086 376.746 134.086 377.664 134.086 378.582 133.844 379.297 133.355 379.809 132.871 380.32 132.223 380.578 131.414 380.578ZM138.297 380.578C137.461 380.578 136.801 380.316 136.312 379.789 135.828 379.262 135.586 378.555 135.586 377.664 135.586 376.746 135.828 376.027 136.312 375.516 136.801 375.004 137.461 374.746 138.297 374.746 139.133 374.746 139.789 375.004 140.262 375.516 140.734 376.027 140.973 376.746 140.973 377.664 140.973 378.555 140.727 379.262 140.242 379.789 139.754 380.316 139.109 380.578 138.297 380.578ZM150.328 400.141C150.461 400.141 150.527 400.195 150.527 400.301V404.797C150.527 404.934 150.461 405 150.328 405H122.383C122.246 405 122.18 404.934 122.18 404.797V400.301C122.18 400.195 122.246 400.141 122.383 400.141H128.172C127.742 399.629 127.383 399.086 127.098 398.52 126.816 397.953 126.602 397.359 126.453 396.738 126.305 396.117 126.23 395.469 126.23 394.793 126.23 392.77 126.695 391.02 127.625 389.551 128.559 388.078 129.906 386.945 131.676 386.148 133.445 385.352 135.57 384.953 138.055 384.953H145.266V400.141ZM139.23 400.141V389.812H138.176C136.961 389.812 135.922 390.016 135.059 390.422 134.195 390.824 133.539 391.418 133.094 392.203 132.648 392.984 132.426 393.957 132.426 395.117 132.426 396.172 132.641 397.074 133.074 397.832 133.504 398.586 134.148 399.16 134.996 399.555 135.848 399.945 136.879 400.141 138.094 400.141ZM149.922 405C149.785 405 149.719 404.934 149.719 404.797V400.301C149.719 400.195 149.785 400.141 149.922 400.141H154.984V374.219H161.02V405ZM169.117 374.219H175.152V405H169.117ZM201.762 378.188C200.926 378.188 200.262 377.926 199.777 377.398 199.289 376.871 199.047 376.164 199.047 375.273 199.047 374.355 199.289 373.641 199.777 373.125 200.262 372.613 200.926 372.355 201.762 372.355 202.598 372.355 203.254 372.613 203.727 373.125 204.199 373.641 204.434 374.355 204.434 375.273 204.434 376.191 204.191 376.906 203.707 377.418 203.219 377.934 202.57 378.188 201.762 378.188ZM208.645 378.188C207.809 378.188 207.148 377.926 206.66 377.398 206.176 376.871 205.934 376.164 205.934 375.273 205.934 374.355 206.176 373.641 206.66 373.125 207.148 372.613 207.809 372.355 208.645 372.355 209.484 372.355 210.137 372.613 210.609 373.125 211.082 373.641 211.32 374.355 211.32 375.273 211.32 376.164 211.078 376.871 210.59 377.398 210.105 377.926 209.457 378.188 208.645 378.188ZM207.43 405C204.945 405 202.82 404.609 201.051 403.824 199.285 403.043 197.934 401.91 197.004 400.422 196.07 398.938 195.605 397.156 195.605 395.078 195.605 392.891 196.117 391.047 197.145 389.551 198.172 388.051 199.574 386.91 201.355 386.129 203.137 385.344 205.164 384.953 207.43 384.953H208.566V382.969H214.641V400.141H219.703C219.836 400.141 219.906 400.195 219.906 400.301V404.797C219.906 404.934 219.836 405 219.703 405ZM208.605 400.141V389.812H207.555C205.715 389.812 204.301 390.266 203.301 391.168 202.301 392.074 201.801 393.391 201.801 395.117 201.801 396.711 202.289 397.945 203.258 398.824 204.23 399.703 205.637 400.141 207.473 400.141ZM219.297 405C219.164 405 219.094 404.934 219.094 404.797V400.301C219.094 400.195 219.164 400.141 219.297 400.141H224.359V374.219H230.395V400.141H235.66C235.793 400.141 235.863 400.195 235.863 400.301V404.797C235.863 404.934 235.793 405 235.66 405ZM239.832 400.141C239.48 399.305 239.211 398.418 239.02 397.488 238.832 396.555 238.738 395.578 238.738 394.551 238.738 393.391 238.934 392.129 239.324 390.766 239.715 389.402 240.211 388.234 240.805 387.262 242.098 386.504 243.484 385.93 244.953 385.539 246.426 385.148 247.715 384.953 248.82 384.953 249.742 384.953 250.617 385.055 251.453 385.258 252.293 385.457 253.09 385.75 253.844 386.129 255.355 386.91 256.531 388.023 257.367 389.469 258.203 390.914 258.625 392.594 258.625 394.512 258.625 395.266 258.562 395.988 258.441 396.676 258.32 397.367 258.125 398.035 257.855 398.684 258.34 399.223 258.898 399.602 259.535 399.816 260.168 400.031 260.957 400.141 261.902 400.141H262.105C262.242 400.141 262.309 400.195 262.309 400.301V404.797C262.309 404.934 262.242 405 262.105 405H261.902C260.473 405 259.23 404.797 258.18 404.391 257.125 403.988 256.141 403.285 255.223 402.285 254.195 403.176 253.016 403.852 251.676 404.312 250.34 404.77 248.973 405 247.566 405H235.254C235.121 405 235.051 404.934 235.051 404.797V400.301C235.051 400.195 235.121 400.141 235.254 400.141ZM244.328 395.402C244.328 396.078 244.406 396.812 244.57 397.609 244.73 398.406 244.961 399.25 245.258 400.141H246.797C247.879 400.141 248.848 399.891 249.715 399.391 250.578 398.891 251.266 398.211 251.777 397.344 252.293 396.48 252.547 395.535 252.547 394.512 252.547 393.078 252.195 391.938 251.496 391.09 250.793 390.238 249.863 389.812 248.699 389.812 248.105 389.812 247.492 389.906 246.859 390.098 246.223 390.285 245.582 390.57 244.934 390.945 244.746 391.648 244.598 392.371 244.488 393.113 244.379 393.855 244.328 394.617 244.328 395.402ZM261.703 405C261.566 405 261.5 404.934 261.5 404.797V400.301C261.5 400.168 261.566 400.098 261.703 400.098H278.023C277.508 399.641 277.051 398.926 276.645 397.953 276.242 396.98 275.891 395.781 275.594 394.348 275.352 393.105 275.031 392.129 274.641 391.414 274.25 390.695 273.742 390.184 273.121 389.875 272.5 389.562 271.703 389.406 270.734 389.406 269.789 389.406 268.898 389.527 268.059 389.773 267.223 390.016 266.316 390.406 265.348 390.945L263.523 386.492C264.711 385.844 266.016 385.359 267.434 385.035 268.848 384.711 270.367 384.547 271.988 384.547 272.719 384.547 273.398 384.582 274.035 384.648 274.668 384.715 275.254 384.844 275.797 385.035 277.309 385.52 278.508 386.344 279.398 387.504 280.289 388.664 280.91 390.285 281.262 392.363 281.504 393.688 281.77 394.863 282.051 395.887 282.336 396.914 282.652 397.777 283.004 398.48 283.355 399.18 283.719 399.734 284.098 400.141V405ZM261.703 405" fill="#f4f8f6"/>
+<path class="d d5" pathLength="1" stroke-width="1.875" stroke-linecap="round" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#d9b45a" d="M45 442.5H150M195 442.5H300"/>
+<path class="f t3" d="M165.75 435.75H179.25V449.25H165.75Z" fill="#d9b45a"/>
+<path class="f t3" d="M172.5 432.953 182.047 442.5 172.5 452.047 162.953 442.5ZM172.5 432.953" fill="#d9b45a"/>
+</g>
+</svg>
+    <div class="inv"><span class="inv-k">دعوة خاصة إلى</span><span class="inv-n">الأخ الفاضل بو أحمد</span></div>
+  </div>
+  <span class="skip">اضغط للدخول</span>
+</div>
+
+<main>
+  <header class="hero" id="top">
+    <div class="cover" aria-hidden="true"><img src="../img/hero.jpg" alt=""></div>
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="vip"><span class="vip-k">دعوة خاصة</span><span class="vip-n">إلى الأخ الفاضل بو أحمد، حفظه الله</span></div>
+        <h1>اجعل لك السهمَ الأكبر<span class="l2">في <em>فرحة الحُفّـــاظ</em></span></h1>
+        <p class="sub">يتشرّف إخوانك في مسجد محمد الفاتح بأن يكون لك سهمٌ في حفل «الفاتحون حملة القرآن»، احتفاءً بتخريج خمسةٍ من حُفّاظ كتاب الله وكوكبةٍ من الساردين.</p>
+        <div class="hp">
+          <div class="hp-row"><span><b data-raised>0</b> من <span data-goal>7,000</span> ريال</span><span>ضايل <span data-left>7,000</span></span></div>
+          <div class="bar thin"><i data-bar></i></div>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#why">تفاصيل الحفل</a>
+          <a class="btn btn-glass" href="#campaign">سهمك في الفرحة</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="title">
+        <span class="dia" aria-hidden="true"></span>
+        <h2>ليش هالحفل؟</h2>
+        <div class="orn" aria-hidden="true"><i></i><i></i><b></b><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" fill="currentColor"/><rect x="5" y="5" width="14" height="14" fill="currentColor" transform="rotate(45 12 12)"/></svg><b></b><i></i><i></i></div>
+        <q class="verse">إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ</q>
+        <small>الإسراء · 9</small>
+      </div>
+      <div class="steps glass">
+        <div class="step"><span class="num">1</span><b>تكريم 5 حفّاظ</b><span>ختموا كتاب الله تعالى كاملًا في حلقات المركز</span></div>
+        <div class="step"><span class="num">2</span><b>الاحتفاء بالساردين</b><span>سردوا أجزاءً من القرآن الكريم في جلسة واحدة</span></div>
+        <div class="step"><span class="num">3</span><b>تحفيز الصغار</b><span>ليكملوا الطريق الذي سار فيه إخوانهم</span></div>
+        <div class="step"><span class="num">4</span><b>فرحة الأهالي</b><span>يرون أبناءهم يُكرَّمون على كتاب الله</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="title">
+        <span class="dia" aria-hidden="true"></span>
+        <h2>إنجازات المركز</h2>
+        <div class="orn" aria-hidden="true"><i></i><i></i><b></b><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" fill="currentColor"/><rect x="5" y="5" width="14" height="14" fill="currentColor" transform="rotate(45 12 12)"/></svg><b></b><i></i><i></i></div>
+      </div>
+      <div class="ach">
+        <div class="ach-main"><b data-count="5">5</b><span>حفّاظ لكتاب الله تعالى كاملًا<small>الفتح الكبير لهذا العام</small></span></div>
+        <div class="ach-grid glass">
+          <div class="step"><b class="n" data-count="50">50</b><span>ساردًا لأجزاء متنوعة في جلسة واحدة</span></div>
+          <div class="step"><b class="n" data-count="100">100</b><span>طالب أتمّوا دورات الفقه والسنة النبوية</span></div>
+          <div class="step"><b class="n" data-count="50">50</b><span>طالبًا أتمّوا دورات التلاوة والتجويد</span></div>
+          <div class="step"><b class="n" data-count="50">50</b><span>طالبًا أتمّوا دورات التفسير</span></div>
+        </div>
+      </div>
+      <div class="photos-head"><h3>من حلقاتنا</h3><span>اسحب لترى المزيد</span></div>
+      <div class="strip" id="strip">
+        <button type="button" aria-label="حلقة التسميع"><img src="../img/circle2.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="الطلاب مع المصاحف"><img src="../img/circle5.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="حلقة تحفيظ في المسجد"><img src="../img/halaqa6.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="حلقة الصغار"><img src="../img/circle3.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="بين يدي المحفّظ"><img src="../img/halaqa7.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="تسميع ومراجعة"><img src="../img/circle1.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="حلقة تحفيظ"><img src="../img/halaqa8.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="حلقة الصغار"><img src="../img/circle4.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="مراجعة المحفوظ"><img src="../img/halaqa9.jpg" alt="" loading="lazy"></button>
+        <button type="button" aria-label="أهل المركز ومحفّظوه"><img src="../img/people.webp" alt="" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="campaign">
+    <div class="wrap">
+      <div class="title">
+        <span class="dia" aria-hidden="true"></span>
+        <h2>سهمك في الفرحة</h2>
+        <div class="orn" aria-hidden="true"><i></i><i></i><b></b><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" fill="currentColor"/><rect x="5" y="5" width="14" height="14" fill="currentColor" transform="rotate(45 12 12)"/></svg><b></b><i></i><i></i></div>
+      </div>
+      <div class="compo" id="camp">
+        <div class="block">
+          <span class="lbl">تم جمعها حتى الآن</span>
+          <div class="amount"><strong data-raised>0</strong><span>ريال من أصل <span data-goal>7,000</span></span></div>
+          <div class="bar" role="progressbar" aria-label="نسبة ما تم جمعه" aria-valuemin="0" aria-valuemax="100" data-barwrap><i data-bar></i></div>
+          <div class="meta"><span><b><span data-pct>0</span>%</b> من الهدف</span><span>ضايل <b><span data-left>7,000</span> ريال</b></span></div>
+          <span class="cdl" id="cdLabel">باقي على الحفل</span>
+          <div class="cd" id="cd">
+            <div><b data-cd="d">5</b><span>يوم</span></div>
+            <div><b data-cd="h">00</b><span>ساعة</span></div>
+            <div><b data-cd="m">00</b><span>دقيقة</span></div>
+            <div><b data-cd="s">00</b><span>ثانية</span></div>
+          </div>
+          <p class="vip-note">للمساهمة أو التنسيق، تواصل مباشرةً مع من أرسل إليك هذه الدعوة. جزاك الله خيرًا.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="spread" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="spread">
+        <div class="block">
+          <div class="meet"><span class="k">دعاء ووفاء</span></div>
+          <q class="dua">نسأل الله أن يجعل سهمك في هذه الفرحة صدقةً جارية، وأن يكتب لك أجر كل آيةٍ يتلوها هؤلاء الحفّاظ</q>
+          <small>إخوانك في مسجد محمد الفاتح</small>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="nm">الفاتحون · حملة القرآن</span>
+    <span>مركز محمد الفاتح لتحفيظ القرآن الكريم · مسجد محمد الفاتح، الصبرة</span>
+    <span>دعوة خاصة للأخ الفاضل بو أحمد</span>
+    
+  </div>
+</footer>
+
+<div class="fab glass off" id="fab" hidden>
+  <span class="mini">ضايل <b><span data-left>7,000</span> ريال</b></span>
+  <button class="btn btn-green" type="button" data-open>تبرّع الآن</button>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <span class="grab" aria-hidden="true"></span>
+  <div class="sheet-head"><h2 id="sheetTitle">اختر مبلغ تبرعك</h2><button class="x" type="button" id="closeSheet" aria-label="إغلاق"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="amts" id="amts"></div>
+  <div class="other"><label for="otherAmt">مبلغ آخر</label><input id="otherAmt" type="number" inputmode="numeric" min="0" placeholder="0"><span>ريال</span></div>
+  <p class="impact" id="impact">كل ريال يقرّبنا من يوم التكريم</p>
+  <a class="btn btn-wa" id="waBtn" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 001.8-1.3 2.3 2.3 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span id="waTxt">تواصل معنا عبر واتساب</span></a>
+  <p class="note">تنفتح محادثة مع لجنة الحفل ورسالتك جاهزة، ونرتّب معك طريقة الدفع.</p>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="عرض الصور">
+  <button class="c" type="button" id="lbC" aria-label="إغلاق">✕</button>
+  <button class="p" type="button" id="lbP" aria-label="السابقة">›</button>
+  <button class="n" type="button" id="lbN" aria-label="التالية">‹</button>
+  <img id="lbImg" alt="">
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ===== settings: update these as donations are confirmed ===== */
+var CAMPAIGN = {
+  goal: 7000,
+  raised: 0,                               // القيمة الاحتياطية فقط · المبلغ الفعلي في data.json
+  whatsapp: "",                            // نسخة بو أحمد: بدون رقم
+  eventTime: "2026-10-22T18:30:00+03:00",  // الخميس بعد العشاء (تقريبي)
+  link: location.origin + location.pathname
+};
+
+var DATA_URL = "../data.json";
+function start(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s){ return document.querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var fmt = function(n){ return Math.round(n).toLocaleString('en-US'); };
+
+  /* splash: once per visit, tap to skip */
+  var splash = $('#splash'), seen = false;
+  try { seen = sessionStorage.getItem('fatihoun-intro') === '1'; sessionStorage.setItem('fatihoun-intro','1'); } catch(e){}
+  function endSplash(){ splash.classList.add('go'); setTimeout(function(){ splash.remove(); }, 650); }
+  if (seen) splash.remove();
+  else {
+    splash.addEventListener('click', endSplash);
+    splash.addEventListener('animationend', function(e){ if (e.target === splash && e.animationName === 'splashOut') splash.remove(); });
+  }
+
+  /* campaign numbers */
+  var raised = Math.min(CAMPAIGN.raised, CAMPAIGN.goal), left = CAMPAIGN.goal - raised;
+  var pct = Math.round(raised / CAMPAIGN.goal * 100);
+  $$('[data-raised]').forEach(function(e){ e.textContent = fmt(raised); });
+  $$('[data-left]').forEach(function(e){ e.textContent = fmt(left); });
+  $$('[data-goal]').forEach(function(e){ e.textContent = fmt(CAMPAIGN.goal); });
+  $$('[data-pct]').forEach(function(e){ e.textContent = pct; });
+  $$('[data-barwrap]').forEach(function(e){ e.setAttribute('aria-valuenow', pct); });
+  if (raised === 0) $('.hp-row').innerHTML = '<span>كن أول المساهمين</span><span>الهدف <b>' + fmt(CAMPAIGN.goal) + '</b> ريال</span>';
+  setTimeout(function(){ $$('[data-bar]').forEach(function(e){ e.style.setProperty('--p', pct + '%'); }); }, seen || reduce ? 50 : 2700);
+
+  /* countdown */
+  var target = new Date(CAMPAIGN.eventTime).getTime();
+  var cd = {d:$('[data-cd=d]'),h:$('[data-cd=h]'),m:$('[data-cd=m]'),s:$('[data-cd=s]')};
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var ms = target - Date.now();
+    if (ms <= 0){ $('#cdLabel').textContent = 'انطلق الحفل، بارك الله في حفّاظنا'; $('#cd').hidden = true; return false; }
+    var s = Math.floor(ms/1000);
+    cd.d.textContent = Math.floor(s/86400); cd.h.textContent = pad(Math.floor(s%86400/3600));
+    cd.m.textContent = pad(Math.floor(s%3600/60)); cd.s.textContent = pad(s%60);
+    return true;
+  }
+  if (tick()) setInterval(tick, 1000);
+
+  /* share */
+  var invite = 'شاركونا الأجر 🌙\nحفل «الفاتحون حملة القرآن» لتكريم 5 من حفّاظ كتاب الله وكوكبة من الساردين في مسجد محمد الفاتح، الخميس 22/10 بعد العشاء.\nتكلفة الحفل 7,000 ريال، اجعل لك سهمًا:\n' + CAMPAIGN.link;
+  $$('[data-share]').forEach(function(a){ a.href = 'https://wa.me/?text=' + encodeURIComponent(invite); });
+  var toast = $('#toast'), tt;
+  function say(t){ toast.textContent = t; toast.hidden = false; clearTimeout(tt); tt = setTimeout(function(){ toast.hidden = true; }, 2000); }
+  if ($('#copyMsg')) $('#copyMsg').addEventListener('click', function(){
+    try { navigator.clipboard.writeText(invite).then(function(){ say('تم نسخ رسالة الدعوة'); }, function(){ say('ما زبط النسخ، جرّب زر واتساب'); }); }
+    catch(e){ say('ما زبط النسخ، جرّب زر واتساب'); }
+  });
+
+  /* achievement numbers count up once */
+  if (!reduce && 'IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (!en.isIntersecting) return; cio.unobserve(en.target);
+        var el = en.target, end = +el.dataset.count, t0 = null;
+        function step(t){ if(!t0) t0=t; var k=Math.min((t-t0)/1000,1); el.textContent = fmt(end*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      });
+    }, {threshold:.7});
+    $$('[data-count]').forEach(function(e){ cio.observe(e); });
+  }
+
+  /* floating donate (phones): hidden over the hero and the campaign card */
+  var fab = $('#fab'), onScreen = {top:true, camp:false};
+  if ('IntersectionObserver' in window){
+    var fio = new IntersectionObserver(function(es){
+      es.forEach(function(en){ onScreen[en.target.id] = en.isIntersecting; });
+      fab.classList.toggle('off', onScreen.top || onScreen.camp);
+    }, {threshold:.25});
+    fio.observe($('#top')); fio.observe($('#camp'));
+  } else fab.classList.remove('off');
+
+  /* donate sheet */
+  var sheet = $('#sheet'), scrim = $('#scrim'), amtsEl = $('#amts'), other = $('#otherAmt'), lastFocus = null;
+  [100,200,500,1000].forEach(function(v){ addAmt(v, fmt(v) + ' <small>ريال</small>'); });
+  if (left > 0) addAmt(left, 'أكمل المبلغ المتبقي · ' + fmt(left) + ' <small>ريال</small>', true);
+  function addAmt(v, html, full){
+    var b = document.createElement('button'); b.type='button'; b.className='amt' + (full?' full':''); b.innerHTML = html; b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){ other.value=''; pick(v, b); }); amtsEl.appendChild(b);
+  }
+  other.addEventListener('input', function(){ pick(Math.max(0, Math.floor(+other.value||0)), null); });
+  function pick(v, btn){
+    $$('.amt', amtsEl).forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true' : 'false'); });
+    var imp = $('#impact');
+    if (!v){ imp.textContent = 'كل ريال يقرّبنا من يوم التكريم'; $('#waTxt').textContent = 'تواصل معنا عبر واتساب'; }
+    else {
+      var p = Math.min(100, v / CAMPAIGN.goal * 100);
+      imp.innerHTML = v >= left ? 'تبرعك <b>يكمل الحملة كاملة</b>، جزاك الله خيرًا' : 'تبرعك يغطي <b>' + (p < 1 ? p.toFixed(1) : Math.round(p)) + '%</b> من تكلفة الحفل';
+      $('#waTxt').textContent = 'أرسل تبرعك عبر واتساب · ' + fmt(v) + ' ريال';
+    }
+    var msg = v
+      ? 'السلام عليكم، حابب أتبرع بمبلغ ' + fmt(v) + ' ريال لحفل «الفاتحون حملة القرآن» في مسجد محمد الفاتح. كيف أرسل المبلغ؟'
+      : 'السلام عليكم، حابب أتبرع لحفل «الفاتحون حملة القرآن» في مسجد محمد الفاتح. كيف أتبرع؟';
+    var wa = $('#waBtn');
+    if (!CAMPAIGN.whatsapp){ wa.removeAttribute('href'); wa.setAttribute('aria-disabled','true'); wa.style.opacity = '.55'; $('#waTxt').textContent = 'رقم التواصل يُضاف قريبًا'; return; }
+    wa.href = 'https://wa.me/' + CAMPAIGN.whatsapp + '?text=' + encodeURIComponent(msg);
+  }
+  pick(0, null);
+  function openSheet(){ lastFocus = document.activeElement; scrim.hidden = false; sheet.hidden = false; document.body.style.overflow='hidden'; setTimeout(function(){ amtsEl.querySelector('button').focus(); }, 50); }
+  function closeSheet(){ scrim.hidden = true; sheet.hidden = true; document.body.style.overflow=''; if (lastFocus) lastFocus.focus(); }
+  $$('[data-open]').forEach(function(b){ b.addEventListener('click', openSheet); });
+  $('#closeSheet').addEventListener('click', closeSheet);
+  scrim.addEventListener('click', closeSheet);
+  var sy = null;
+  sheet.addEventListener('touchstart', function(e){ sy = e.touches[0].clientY; }, {passive:true});
+  sheet.addEventListener('touchend', function(e){ if (sy!==null && e.changedTouches[0].clientY - sy > 80 && e.target.tagName !== 'INPUT') closeSheet(); sy = null; });
+
+  /* lightbox */
+  var shots = $$('#strip button'), lb = $('#lb'), lbImg = $('#lbImg'), cur = 0, lbLast = null;
+  function show(i){ cur = (i+shots.length)%shots.length; lbImg.src = shots[cur].querySelector('img').getAttribute('src'); lbImg.alt = shots[cur].getAttribute('aria-label'); }
+  shots.forEach(function(b,i){ b.addEventListener('click', function(){ lbLast = b; show(i); lb.hidden = false; document.body.style.overflow='hidden'; $('#lbC').focus(); }); });
+  function closeLb(){ lb.hidden = true; document.body.style.overflow=''; if (lbLast) lbLast.focus(); }
+  $('#lbC').onclick = closeLb; $('#lbP').onclick = function(){ show(cur-1); }; $('#lbN').onclick = function(){ show(cur+1); };
+  lb.addEventListener('click', function(e){ if (e.target === lb) closeLb(); });
+  var sx = null;
+  lb.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e){ if (sx===null) return; var dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 50) show(dx > 0 ? cur+1 : cur-1); });
+
+  document.addEventListener('keydown', function(e){
+    if (!lb.hidden){ if (e.key==='Escape') closeLb(); if (e.key==='ArrowLeft') show(cur+1); if (e.key==='ArrowRight') show(cur-1); }
+    else if (!sheet.hidden && e.key==='Escape') closeSheet();
+    else if (document.body.contains(splash) && (e.key==='Escape' || e.key==='Enter')) endSplash();
+  });
+}
+
+/* read the shared amount, then start; fall back to the values above if the file can't be read */
+(function(){
+  var done = false;
+  function go(){ if (!done){ done = true; start(); } }
+  setTimeout(go, 2500);
+  fetch(DATA_URL + '?t=' + Date.now(), {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){ if (d && !done){ if (typeof d.raised === 'number') CAMPAIGN.raised = d.raised; if (typeof d.goal === 'number') CAMPAIGN.goal = d.goal; } })
+    .catch(function(){})
+    .then(go);
+})();
+</script>
+
+</html>
