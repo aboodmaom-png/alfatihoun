@@ -448,22 +448,12 @@ var CAMPAIGN = {
   link: location.origin + location.pathname
 };
 
-var DATA_URL = "../data.json";
+var DATA_URLS = ["/api/amount", "../data.json"];  // المبلغ من صفحة الإدارة، وإلا من data.json
 function start(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function(s){ return document.querySelector(s); };
   var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
   var fmt = function(n){ return Math.round(n).toLocaleString('en-US'); };
-
-  /* splash: once per visit, tap to skip */
-  var splash = $('#splash'), seen = false;
-  try { seen = sessionStorage.getItem('fatihoun-intro') === '1'; sessionStorage.setItem('fatihoun-intro','1'); } catch(e){}
-  function endSplash(){ splash.classList.add('go'); setTimeout(function(){ splash.remove(); }, 650); }
-  if (seen) splash.remove();
-  else {
-    splash.addEventListener('click', endSplash);
-    splash.addEventListener('animationend', function(e){ if (e.target === splash && e.animationName === 'splashOut') splash.remove(); });
-  }
 
   /* campaign numbers */
   var raised = Math.min(CAMPAIGN.raised, CAMPAIGN.goal), left = CAMPAIGN.goal - raised;
@@ -474,7 +464,7 @@ function start(){
   $$('[data-pct]').forEach(function(e){ e.textContent = pct; });
   $$('[data-barwrap]').forEach(function(e){ e.setAttribute('aria-valuenow', pct); });
   if (raised === 0) $('.hp-row').innerHTML = '<span>كن أول المساهمين</span><span>الهدف <b>' + fmt(CAMPAIGN.goal) + '</b> ريال</span>';
-  setTimeout(function(){ $$('[data-bar]').forEach(function(e){ e.style.setProperty('--p', pct + '%'); }); }, seen || reduce ? 50 : 2700);
+  setTimeout(function(){ $$('[data-bar]').forEach(function(e){ e.style.setProperty('--p', pct + '%'); }); }, SPLASH_SEEN || reduce ? 50 : 2700);
 
   /* countdown */
   var target = new Date(CAMPAIGN.eventTime).getTime();
@@ -572,18 +562,30 @@ function start(){
   document.addEventListener('keydown', function(e){
     if (!lb.hidden){ if (e.key==='Escape') closeLb(); if (e.key==='ArrowLeft') show(cur+1); if (e.key==='ArrowRight') show(cur-1); }
     else if (!sheet.hidden && e.key==='Escape') closeSheet();
-    else if (document.body.contains(splash) && (e.key==='Escape' || e.key==='Enter')) endSplash();
   });
 }
+
+/* splash: runs straight away, closes by itself, any tap/scroll/key skips it */
+var SPLASH_SEEN = false;
+(function(){
+  var s = document.getElementById('splash'); if (!s) return;
+  try { SPLASH_SEEN = sessionStorage.getItem('fatihoun-intro') === '1'; sessionStorage.setItem('fatihoun-intro','1'); } catch(e){}
+  var gone = false;
+  function end(){ if (gone) return; gone = true; s.style.pointerEvents = 'none'; s.classList.add('go'); setTimeout(function(){ if (s.parentNode) s.parentNode.removeChild(s); }, 650); }
+  if (SPLASH_SEEN){ s.parentNode.removeChild(s); return; }
+  setTimeout(end, 4300);
+  s.addEventListener('click', end);
+  ['keydown','wheel','touchmove'].forEach(function(ev){ window.addEventListener(ev, end, {once:true, passive:true}); });
+})();
 
 /* read the shared amount, then start; fall back to the values above if the file can't be read */
 (function(){
   var done = false;
   function go(){ if (!done){ done = true; start(); } }
-  setTimeout(go, 2500);
-  fetch(DATA_URL + '?t=' + Date.now(), {cache:'no-store'})
-    .then(function(r){ return r.ok ? r.json() : null; })
-    .then(function(d){ if (d && !done){ if (typeof d.raised === 'number') CAMPAIGN.raised = d.raised; if (typeof d.goal === 'number') CAMPAIGN.goal = d.goal; } })
+  setTimeout(go, 1500);
+  function get(u){ return fetch(u + '?t=' + Date.now(), {cache:'no-store'}).then(function(r){ if (!r.ok) throw 0; return r.json(); }).then(function(d){ if (typeof d.raised !== 'number') throw 0; return d; }); }
+  get(DATA_URLS[0]).catch(function(){ return get(DATA_URLS[1]); })
+    .then(function(d){ if (!done){ CAMPAIGN.raised = d.raised; if (typeof d.goal === 'number') CAMPAIGN.goal = d.goal; } })
     .catch(function(){})
     .then(go);
 })();

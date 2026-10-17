@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>تحديث المبلغ · الفاتحون</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;800&display=swap">
+<style>
+:root{--green:#133F2F;--green-2:#1d5a44;--gold:#C8A04B;--gold-soft:#ead49b;--bg:#F7FAF8;--ink:#10251c;--muted:#5a7068;--hair:rgba(19,63,47,.14);--ok:#1f8a4c;--bad:#b3261e;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:grid;place-items:center;background:radial-gradient(60% 40% at 90% 0%,rgba(124,195,168,.35),transparent 70%),var(--bg);color:var(--ink);font-family:"Noto Kufi Arabic",Tahoma,sans-serif;padding:max(20px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+.card{width:100%;max-width:380px;background:#fff;border:1px solid var(--hair);border-radius:28px;padding:1.6rem 1.3rem;display:grid;gap:1.1rem;box-shadow:0 18px 44px -22px rgba(19,63,47,.35)}
+h1{margin:0;font-size:1.2rem;font-weight:800;color:var(--green);text-align:center}
+.now{background:linear-gradient(155deg,#2a7356,var(--green));color:#fff;border-radius:20px;padding:1rem;text-align:center;display:grid;gap:.1rem}
+.now span{font-size:.8rem;opacity:.8}
+.now b{font-size:2.2rem;font-weight:800;color:var(--gold-soft);font-variant-numeric:tabular-nums;line-height:1.3}
+.now small{font-size:.78rem;opacity:.8}
+label{display:grid;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--muted)}
+input{font:inherit;font-size:1.4rem;font-weight:800;color:var(--green);border:1.5px solid var(--hair);border-radius:16px;padding:.7rem .9rem;width:100%;text-align:center;direction:ltr;background:#fff;outline:none}
+input:focus{border-color:var(--gold)}
+input.pin{font-size:1.1rem;letter-spacing:.3em}
+button{font:inherit;font-size:1.05rem;font-weight:800;border:0;border-radius:999px;padding:.85rem;background:var(--green);color:#fff;cursor:pointer}
+button:disabled{opacity:.6}
+.msg{min-height:1.6em;text-align:center;font-size:.9rem;font-weight:600;margin:0}
+.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
+.forget{background:none;color:var(--muted);font-size:.78rem;font-weight:600;padding:0;text-decoration:underline}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main class="card">
+  <h1>تحديث المبلغ المجموع</h1>
+  <div class="now"><span>المبلغ الحالي على الموقع</span><b id="now">…</b><small>من أصل 7,000 ريال</small></div>
+  <form id="f" novalidate>
+    <div style="display:grid;gap:1rem">
+      <label for="amount">المبلغ الكلي المجموع حتى الآن (ريال)
+        <input id="amount" type="number" inputmode="numeric" min="0" step="1" placeholder="مثال: 3500" required>
+      </label>
+      <label for="pin" id="pinWrap">الرمز السري
+        <input id="pin" class="pin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="••••">
+      </label>
+      <button id="save" type="submit">حفظ</button>
+      <p class="msg" id="msg" role="status"></p>
+      <button class="forget" type="button" id="forget" hidden>تغيير الرمز السري</button>
+    </div>
+  </form>
+</main>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var fmt = function(n){ return Number(n).toLocaleString('en-US'); };
+  var saved = '';
+  try { saved = localStorage.getItem('fatihoun-pin') || ''; } catch(e){}
+  if (saved){ $('pinWrap').hidden = true; $('forget').hidden = false; }
+
+  function say(t, kind){ var m = $('msg'); m.textContent = t; m.className = 'msg ' + (kind || ''); }
+
+  fetch('/api/amount', {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(d){
+    if (typeof d.raised === 'number'){ $('now').textContent = fmt(d.raised) + ' ريال'; $('amount').value = d.raised; }
+    else { $('now').textContent = '—'; say('التخزين مش مربوط بعد على Vercel', 'bad'); }
+  }).catch(function(){ $('now').textContent = '—'; say('تعذّر قراءة المبلغ، تأكد من الإنترنت', 'bad'); });
+
+  $('forget').addEventListener('click', function(){
+    try { localStorage.removeItem('fatihoun-pin'); } catch(e){}
+    saved = ''; $('pinWrap').hidden = false; $('forget').hidden = true; $('pin').focus();
+  });
+
+  $('f').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = $('amount').value.trim(), pin = saved || $('pin').value.trim();
+    if (v === '' || isNaN(+v) || +v < 0){ say('اكتب المبلغ بالأرقام', 'bad'); return; }
+    if (!pin){ say('اكتب الرمز السري', 'bad'); $('pinWrap').hidden = false; return; }
+    $('save').disabled = true; say('جاري الحفظ…');
+    fetch('/api/amount', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({pin: pin, raised: Math.round(+v)})})
+      .then(function(r){ return r.json().then(function(d){ return {ok:r.ok, status:r.status, d:d}; }); })
+      .then(function(x){
+        if (x.ok){
+          try { localStorage.setItem('fatihoun-pin', pin); } catch(e){}
+          saved = pin; $('pinWrap').hidden = true; $('forget').hidden = false; $('pin').value = '';
+          $('now').textContent = fmt(x.d.raised) + ' ريال';
+          say('تم الحفظ ✓ الموقع اتحدّث', 'ok');
+        } else if (x.status === 401){
+          try { localStorage.removeItem('fatihoun-pin'); } catch(e){}
+          saved = ''; $('pinWrap').hidden = false; $('forget').hidden = true;
+          say('الرمز السري غلط', 'bad'); $('pin').focus();
+        } else {
+          say('ما زبط الحفظ، جرّب كمان مرة', 'bad');
+        }
+      })
+      .catch(function(){ say('ما زبط الحفظ، تأكد من الإنترنت', 'bad'); })
+      .then(function(){ $('save').disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
