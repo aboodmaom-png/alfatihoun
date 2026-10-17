@@ -8,7 +8,7 @@
 
 const PAGES = {
   public: { key: 'fatihoun:raised-ils', goal: 7000 }, // شيكل
-  vip:    { key: 'fatihoun:raised-sar', goal: 7000 }, // ريال
+  vip:    { key: 'fatihoun:raised-sar', goal: 10000 }, // ريال: رعاية كاملة
   um:     { key: 'fatihoun:raised-um',  goal: 7000 }, // شيكل
 };
 
