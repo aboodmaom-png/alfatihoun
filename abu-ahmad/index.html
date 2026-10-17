@@ -354,11 +354,8 @@ footer .nm{font-family:var(--brand);font-size:1.15rem;color:var(--green)}
       <div class="strip" id="strip">
         <button type="button" aria-label="حلقة التسميع"><img src="../img/circle2.jpg" alt="" loading="lazy"></button>
         <button type="button" aria-label="الطلاب مع المصاحف"><img src="../img/circle5.jpg" alt="" loading="lazy"></button>
-        <button type="button" aria-label="حلقة تحفيظ في المسجد"><img src="../img/halaqa6.jpg" alt="" loading="lazy"></button>
         <button type="button" aria-label="حلقة الصغار"><img src="../img/circle3.jpg" alt="" loading="lazy"></button>
-        <button type="button" aria-label="بين يدي المحفّظ"><img src="../img/halaqa7.jpg" alt="" loading="lazy"></button>
         <button type="button" aria-label="تسميع ومراجعة"><img src="../img/circle1.jpg" alt="" loading="lazy"></button>
-        <button type="button" aria-label="حلقة تحفيظ"><img src="../img/halaqa8.jpg" alt="" loading="lazy"></button>
         <button type="button" aria-label="حلقة الصغار"><img src="../img/circle4.jpg" alt="" loading="lazy"></button>
         <button type="button" aria-label="مراجعة المحفوظ"><img src="../img/halaqa9.jpg" alt="" loading="lazy"></button>
         <button type="button" aria-label="أهل المركز ومحفّظوه"><img src="../img/people.webp" alt="" loading="lazy"></button>
@@ -448,6 +445,7 @@ var CAMPAIGN = {
   link: location.origin + location.pathname
 };
 
+var CURRENCY = "SAR";  // الصفحة العامة بالشيكل، صفحة بو أحمد بالريال
 var DATA_URLS = ["/api/amount", "../data.json"];  // المبلغ من صفحة الإدارة، وإلا من data.json
 function start(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -583,9 +581,12 @@ var SPLASH_SEEN = false;
   var done = false;
   function go(){ if (!done){ done = true; start(); } }
   setTimeout(go, 1500);
-  function get(u){ return fetch(u + '?t=' + Date.now(), {cache:'no-store'}).then(function(r){ if (!r.ok) throw 0; return r.json(); }).then(function(d){ if (typeof d.raised !== 'number') throw 0; return d; }); }
+  function get(u){ return fetch(u + '?t=' + Date.now(), {cache:'no-store'}).then(function(r){ if (!r.ok) throw 0; return r.json(); }).then(function(d){ if (typeof d.raised !== 'number' && typeof d.raisedSar !== 'number') throw 0; return d; }); }
   get(DATA_URLS[0]).catch(function(){ return get(DATA_URLS[1]); })
-    .then(function(d){ if (!done){ CAMPAIGN.raised = d.raised; if (typeof d.goal === 'number') CAMPAIGN.goal = d.goal; } })
+    .then(function(d){ if (done) return;
+      var gs = d.goalSar != null ? d.goalSar : d.goal, rs = d.raisedSar != null ? d.raisedSar : d.raised;
+      if (CURRENCY === 'ILS'){ var r = d.rate || 0.83; CAMPAIGN.goal = Math.round(gs * r / 10) * 10; CAMPAIGN.raised = Math.round(rs * r); }
+      else { CAMPAIGN.goal = gs; CAMPAIGN.raised = rs; } })
     .catch(function(){})
     .then(go);
 })();
