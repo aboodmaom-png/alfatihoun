@@ -2,14 +2,16 @@
 // GET  /api/amount            ← الصفحة العامة {goal, raised}
 // GET  /api/amount?p=vip      ← صفحة بو أحمد  {goal, raised}
 // GET  /api/amount?p=um       ← صفحة أم أحمد  {goal, raised}
+// GET  /api/amount?p=almasa   ← صفحة فريق الماسة {goal, raised}
 // GET  /api/amount?p=all      ← صفحة الإدارة  {public:{...}, vip:{...}}
-// POST /api/amount {pin, public?, vip?, um?}  ← تحديث من صفحة الإدارة
+// POST /api/amount {pin, public?, vip?, um?, almasa?}  ← تحديث من صفحة الإدارة
 // يحتاج على Vercel: قاعدة Upstash Redis مربوطة بالمشروع + متغير ADMIN_PIN
 
 const PAGES = {
   public: { key: 'fatihoun:raised-ils', goal: 7000 }, // شيكل
   vip:    { key: 'fatihoun:raised-sar', goal: 10000 }, // ريال: رعاية كاملة
   um:     { key: 'fatihoun:raised-um',  goal: 7000 }, // شيكل
+  almasa: { key: 'fatihoun:raised-almasa', goal: 7000 }, // شيكل: فريق الماسة
 };
 
 const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
